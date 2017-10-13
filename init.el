@@ -41,7 +41,7 @@
 (defvar my-packages
   '(;; makes handling lisp expressions much, much easier
     ;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
-    paredit
+paredit
 
     ;; key bindings and code colorization for Clojure
     ;; https://github.com/clojure-emacs/clojure-mode
@@ -53,7 +53,8 @@
     ;; integration with a Clojure REPL
     ;; https://github.com/clojure-emacs/cider
     cider
-
+    ;; one of the best clojure packages
+    clj-refactor
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
     ;; of ido
@@ -63,6 +64,18 @@
     ;; a filterable list of possible commands in the minibuffer
     ;; http://www.emacswiki.org/emacs/Smex
     smex
+
+
+    ;; On OS X, an Emacs instance started from the graphical user
+    ;; interface will have a different environment than a shell in a
+    ;; terminal window, because OS X does not run a shell during the
+    ;; login. Obviously this will lead to unexpected results when
+    ;; calling external utilities like make from Emacs.
+    ;; This library works around this problem by copying important
+    ;; environment variables from the user's shell.
+    ;; https://github.com/purcell/exec-path-from-shell
+    exec-path-from-shell
+
 
     ;; project navigation
     projectile
@@ -74,7 +87,11 @@
     tagedit
 
     ;; git integration
-    magit))
+    magit
+    scss-mode
+    web-mode
+    helm
+    use-package))
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
@@ -138,3 +155,18 @@
 ;; Langauage-specific
 (load "setup-clojure.el")
 (load "setup-js.el")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(coffee-tab-width 2)
+ '(package-selected-packages
+   (quote
+    (use-package helm web-mode scss-mode clj-refactor tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous exec-path-from-shell clojure-mode-extra-font-locking cider))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
