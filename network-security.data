@@ -1,3 +1,4 @@
 (
+ (:id "sha1:101d09b40e8c6cc1f2fb4e23df3bb401fc520bf2" :fingerprint "sha1:2a:32:66:4c:60:6d:6e:c9:fc:29:89:22:85:97:ae:d2:1e:93:eb:ff" :host "www.conj.io:443" :conditions (:insecure :unknown-ca :invalid))
  (:id "sha1:85457c729378cc93c732b6a3941c8e4f9c2e60f3" :fingerprint "sha1:ab:a6:d7:6a:b3:d3:63:fa:19:0d:65:41:60:23:6e:ef:d3:2a:46:dc" :host "marmalade-repo.org:443" :conditions (:insecure :unknown-ca :invalid))
 )

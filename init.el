@@ -39,16 +39,17 @@
 ;; manually with M-x package-install
 ;; Add in your own as you wish:
 (defvar my-packages
-  '(;; makes handling lisp expressions much, much easier
+  '(
+
+   
+    ;; makes handling lisp expressions much, much easier
     ;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
-paredit
+    paredit
 
     ;; key bindings and code colorization for Clojure
     ;; https://github.com/clojure-emacs/clojure-mode
     clojure-mode
 
-    ;; extra syntax highlighting for clojure
-    clojure-mode-extra-font-locking
 
     ;; integration with a Clojure REPL
     ;; https://github.com/clojure-emacs/cider
@@ -123,6 +124,7 @@ paredit
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
 
+
 ;;;;
 ;; Customization
 ;;;;
@@ -163,10 +165,15 @@ paredit
  '(coffee-tab-width 2)
  '(package-selected-packages
    (quote
-    (use-package helm web-mode scss-mode clj-refactor tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous exec-path-from-shell clojure-mode-extra-font-locking cider))))
+    (typed-clojure-mode use-package helm web-mode scss-mode clj-refactor tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous exec-path-from-shell cider)))
+ '(safe-local-variable-values (quote ((cider-boot-parameters . "dev")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
+(global-aggressive-indent-mode 1)
+(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
